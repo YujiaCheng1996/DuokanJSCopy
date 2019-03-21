@@ -1,2 +1,4 @@
-/reader/www/viperjs/gallery/zclip/1.1.1/ZeroClipboard.swf$domain=duokan.com
-duokan.com##.zclip
+duokan.com###button-copy
+duokan.com###selection-menu > span.sep:nth-child(2)
+duokan.com###button-share
+duokan.com###selection-menu > span.sep:nth-child(4)
