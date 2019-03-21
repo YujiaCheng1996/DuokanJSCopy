@@ -22,17 +22,14 @@
             } else {
                 var selection = window.getSelection();
                 var body = document.getElementsByTagName('body')[0];
-                var range = selection.getRangeAt(0);
                 var extContent = document.createElement('div');
                 extContent.style.position = 'absolute';
                 extContent.style.left = '-99999px';
                 extContent.innerHTML = text;
                 body.appendChild(extContent);
-                selection.selectAllChildren(extContent);
+                selection.select(extContent);
                 window.setTimeout(function() {
                     body.removeChild(extContent);
-                    selection.removeAllRanges();
-                    selection.addRange(range);
                     body = selection = null;
                 },
                 0);
