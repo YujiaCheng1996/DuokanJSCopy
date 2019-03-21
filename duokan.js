@@ -14,17 +14,16 @@
     document.body.addEventListener('copy', function (e) {
         var text = document.getElementById("button-copy").getAttribute("text");
         var addExtHTML = function(e) {
-            var extContent = document.createElement('div');
-            extContent.innerHTML = text;
             if (!e) {
-                clipboardData.setData('Text', extContent.innerText);
+                clipboardData.setData('Text', text);
             } else if (e.clipboardData) {
                 e.preventDefault();
-                e.clipboardData.setData('text/plain', extContent.innerText);
+                e.clipboardData.setData('text/plain', text);
             } else {
                 var selection = window.getSelection();
                 var body = document.getElementsByTagName('body')[0];
                 var range = selection.getRangeAt(0);
+                var extContent = document.createElement('div');
                 extContent.style.position = 'absolute';
                 extContent.style.left = '-99999px';
                 extContent.innerHTML = text;
